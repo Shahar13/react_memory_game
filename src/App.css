@@ -19,10 +19,30 @@ HEADER{
   top: 0;
   right: 0; */
   background: #a7f2ff;
-  padding: 8px;
+  padding-right: 16px;
   box-shadow: -1px 3px 11px #353434;
+  line-height: 60px;
+  height: 60px;
 }
 
+.btn_start{
+  width: 200px;
+  cursor: pointer;
+  background: #44e7e77a;
+  border: solid 1px grey;
+  border-radius: 7px;
+  padding: 5px;
+  transition: box-shadow 0.2s;
+}
+
+.btn_start:hover{
+  box-shadow: 3px 3px 6px #353434;
+  /* box-shadow: 3px 3px 12px grey; */
+}
+
+.div_main{
+  padding-bottom: 10px;
+}
 .board{
   /* CHECK AGAIN */
   /* width: 100vh; */
@@ -43,6 +63,7 @@ HEADER{
   /* margin: 5px; */
   height: calc(70vh / 3);
   max-height: calc(70vw / 3);
+  cursor: pointer;
 }
 
 .card-outer.flipped .card{
@@ -70,10 +91,10 @@ HEADER{
 
 .front {
   text-align: center;
+  display: flex;
 }
 
 .front IMG{
-  display: block;
   max-width: 95%; 
   margin: auto;
   padding: 10px 20px;
@@ -85,6 +106,58 @@ HEADER{
   transform: rotateY(180deg);
 }
 .back IMG {
-  height: 90%; 
-  margin-top: 10px;
+  width: 90%; 
+  max-width: 90%; 
+  height: 80%; 
+  max-height: 80%; 
+  margin-top: 15%;
+}
+
+/* OVERLAY STUFF */
+
+.msg_overlay{
+  display: none;
+  opacity: 0;
+  position: absolute; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  /* background: rgba(0, 0, 0, 0.8); */
+  text-align: center; 
+  transition: opacity 1s;
+}
+
+.msg_overlay_show{
+  opacity: 1;
+}
+
+.bg_video{
+  z-index: -1; 
+  position: fixed; 
+  right: 0; 
+  bottom: 0; 
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.msg_overlay_content{
+  z-index: 111;
+  margin: 120px auto; 
+  padding: 200px; 
+  width: 640px; 
+  height: 700px; 
+  text-align: center; 
+  font-weight: bold; 
+  border: solid 6px green; 
+  background: #fff; 
+  border-radius: 7px;
+}
+
+.btn_overlay{
+  margin-top:40px;    
+} 
+
+.force_display{
+  /* display: block !important; */
+  display: block;
 }
