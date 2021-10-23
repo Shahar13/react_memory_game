@@ -1,5 +1,6 @@
 import './App.css';
 import Images from './Images';
+import MyStopwatch from './Timer';
 import {useState} from 'react';
 import {shuffle} from 'lodash';
 import BackSide from "./img/js-badge.svg";
@@ -97,17 +98,21 @@ function App() {
   return (
     <div className="div_main">
       <header>
+        <MyStopwatch />
+        
         {winning ?
-          <span style={{color: 'red', fontWeight: 'bold'}}>
+          <span className="winning">
             We have a winner!!!
           </span>
           :
           <span></span>
         }
-        &nbsp;
-        Clicks Counter: {clicks}
+        
+        <span className="clicks_counter">
+          Clicks Counter: {clicks}
+        </span>
 
-        <span style={{float: 'right'}}>
+        <span className="span_btn_start">
           <button onClick={() => resetBoard()} className="btn_start" title="Start a new game">New Game</button>
         </span>
       </header>
